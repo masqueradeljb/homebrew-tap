@@ -7,14 +7,14 @@ cask "perch-avatar" do
   desc "Desktop pet that perches on the window your coding agent is working in"
   homepage "https://github.com/masqueradeljb/perch-avatar"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Perch.app"
+
+  zap trash: "~/.perch"
 
   caveats <<~EOS
     Connect your agents with the CLI:
       npm i -g perch-avatar && perch setup
   EOS
-
-  zap trash: "~/.perch"
 end
